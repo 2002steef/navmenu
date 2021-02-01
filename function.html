@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>nom</title>
+
+</head>
+<body>
+
+    <div id="test"></div>
+
+    <script>
+
+        function createMenu(x){
+            let result = "";
+            let data = JSON.parse(x);
+            result = result + "<ul>";
+            for (let o of data) {
+                result = result + "<li>" + o.title + "</li>"
+            }
+            result = result + "</ul>";
+            return result;
+        }
+        const j =   '[{"title": "home","url" : "/"},{"title" : "producten","url" :' +
+                    ' "/producten/"},{"title": "Over ons","url" : "/overons/"},' +
+                    '{"title": "contact","url" : "/contact/"}]'
+        document.getElementById('test').innerHTML = createMenu(j);
+    </script>
+
+
+
+</body>
+</html>
